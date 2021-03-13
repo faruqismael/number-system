@@ -26,7 +26,17 @@ class NumberSystem {
         return this.result
     }
 
+    // decimal to binary
+    decimalToBinary(decimal: number): number {
+        let storeRemainder: string = '';
 
+        while (decimal != 0) {
+            storeRemainder += decimal % 2;
+            decimal = Math.floor(decimal / 2);
+        }
+
+        return Number(this.reverse(storeRemainder))
+    }
 }
 
 let one = new NumberSystem();
