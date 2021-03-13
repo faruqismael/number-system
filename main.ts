@@ -1,18 +1,37 @@
-// function checkZeros() {
-//     return +.indexOf()
-// }
+class NumberSystem {
 
-export const binaryToDecimal = (binary: number): number => {
-    let binaryString: string = binary.toString();
-    let index: number = binaryString.length - 1;
-    let result: number = 0;
+    result = 0;
 
+    // utils
 
-    for (let i = 0; i < binaryString.length; i++) {
-        result += Number(binaryString[i]) * (2 ** index)
-        index--;
+    reverse(value: string): string {
+        let reversed: string = '';
+        for (let i = value.length - 1; i >= 0; i--) {
+            reversed += value[i];
+        }
+
+        return reversed;
+
     }
 
-    return result
+    // binary to decimal
+    binaryToDecimal(binary: number): number {
+        let binaryString = binary.toString();
+        let index = binaryString.length - 1;
+
+        for (let i = 0; i < binaryString.length; i++) {
+            this.result += Number(binaryString[i]) * (2 ** index)
+            index--;
+        }
+        return this.result
+    }
+
+
 }
 
+let one = new NumberSystem();
+
+console.log(one.binaryToDecimal(110))
+
+
+export default NumberSystem;
