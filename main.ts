@@ -1,3 +1,7 @@
+// function checkZeros() {
+//     return +.indexOf()
+// }
+
 export const binaryToDecimal = (binary: number): number => {
     let binaryString: string = binary.toString();
     let index: number = binaryString.length - 1;
