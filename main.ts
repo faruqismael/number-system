@@ -63,6 +63,12 @@ class NumberSystem {
     }
 
     // other
+
+    // simple shortcuts
+    binaryToOctal(binary: string): number {
+        // 
+        return 1
+    }
 }
 
 
