@@ -14,18 +14,6 @@ class NumberSystem {
 
     }
 
-    // binary to decimal
-    binaryToDecimal(binary: number): number {
-        let binaryString = binary.toString();
-        let index = binaryString.length - 1;
-
-        for (let i = 0; i < binaryString.length; i++) {
-            this.result += Number(binaryString[i]) * (2 ** index)
-            index--;
-        }
-        return this.result
-    }
-
     // for all 
     toDecimal(num: number, base: number): number {
         let binaryString = num.toString();
@@ -49,30 +37,23 @@ class NumberSystem {
         return Number(this.reverse(storeRemainder))
     }
 
-    // decimal to binary
-    decimalToBinary(decimal: number): number {
-        let storeRemainder: string = '';
-
-        while (decimal != 0) {
-            storeRemainder += decimal % 2;
-            decimal = Math.floor(decimal / 2);
-        }
-
-        return Number(this.reverse(storeRemainder))
-    }
-
-    // other
-
     // simple shortcuts
-    binaryToOctal(binary: number): number {
+
+    // from binary
+    fromBinary(binary: number, base: number): number {
         let decimal = this.toDecimal(binary, 2)
-        return this.fromDecimal(decimal, 8)
+        return this.fromDecimal(decimal, base)
         // return 1
     }
 
-    // binary to hexa
-}
+    // to binary
 
+    toBinary(number: number, base: number) {
+        let decimal = this.toDecimal(number, base)
+        return this.fromDecimal(decimal, 2)
+    }
+
+}
 
 
 export default NumberSystem;
