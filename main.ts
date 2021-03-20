@@ -44,9 +44,8 @@ class NumberSystem {
 
         while (decimal != 0) {
             storeRemainder += decimal % base;
-            decimal = Math.floor(decimal / 2);
+            decimal = Math.floor(decimal / base);
         }
-
         return Number(this.reverse(storeRemainder))
     }
 
@@ -65,11 +64,15 @@ class NumberSystem {
     // other
 
     // simple shortcuts
-    binaryToOctal(binary: string): number {
-        // 
-        return 1
+    binaryToOctal(binary: number): number {
+        let decimal = this.toDecimal(binary, 2)
+        return this.fromDecimal(decimal, 8)
+        // return 1
     }
+
+    // binary to hexa
 }
+
 
 
 export default NumberSystem;
