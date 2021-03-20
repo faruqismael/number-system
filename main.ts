@@ -2,8 +2,8 @@ class NumberSystem {
 
     result = 0;
 
-    // utils
 
+    // reverse method
     reverse(value: string): string {
         let reversed: string = '';
         for (let i = value.length - 1; i >= 0; i--) {
@@ -14,7 +14,7 @@ class NumberSystem {
 
     }
 
-    // for all 
+    // from any number system to decimal
     toDecimal(num: number, base: number): number {
         let binaryString = num.toString();
         let index = binaryString.length - 1;
@@ -26,7 +26,7 @@ class NumberSystem {
         return this.result
     }
 
-    // decimal to binary
+    // decimal to any number system
     fromDecimal(decimal: number, base: number): number {
         let storeRemainder: string = '';
 
@@ -37,16 +37,14 @@ class NumberSystem {
         return Number(this.reverse(storeRemainder))
     }
 
-    // simple shortcuts
 
-    // from binary
+    // from binary to any number
     fromBinary(binary: number, base: number): number {
         let decimal = this.toDecimal(binary, 2)
         return this.fromDecimal(decimal, base)
-        // return 1
     }
 
-    // to binary
+    // any number to binary
 
     toBinary(number: number, base: number) {
         let decimal = this.toDecimal(number, base)
