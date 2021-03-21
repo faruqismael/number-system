@@ -1,9 +1,7 @@
 type base = 2 | 8 | 10 | 16;
 
 class NumberSystem {
-
     result = 0;
-
 
     // reverse method
     reverse(value: string): string {
